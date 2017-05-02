@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+	<meta charset="utf-8">
+	<title>Curso de JavaScript Avanzado: Paradigmas de Programación de EDteam por @jonmircha</title>
+	<meta name="description" content="Esta presentación contiene toda la teoría y es una referencia temática del Curso de JavaScript Avanzado: Paradigmas de Programación impartido por Jonathan MirCha">
+	<meta name="author" content="Jonathan MirCha">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<link rel="shortcut icon" type="image/png" href="./img/js-logo.png">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css" id="theme">
+	<!-- Code syntax highlighting -->
+	<link rel="stylesheet" href="lib/css/zenburn.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<!-- Printing and PDF exports -->
+	<script>
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+	<!--[if lt IE 9]>
+	<script src="lib/js/html5shiv.js"></script>
+	<![endif]-->
+</head>
+<body>
+	<div class="corner c-tl"><img src="img/edteam-logo.png" alt="EDteam" style="max-width: 70%;" /></div>
+	<div class="corner c-tr"><img src="img/js-logo.png" alt="JavaScript" style="max-width: 25%;" /></div>
+	<div class="corner c-bl"><p><img src="http://bextlan.com/img/jonmircha.jpg" style="max-width: 50px; border-radius:100%;"> <span>Jonathan MirCha - @jonmircha</span></p></div>
+	<div class="corner c-br"><p>Curso JS Avanzado: Paradigmas de Programación</p></div>
+	<div class="reveal">
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div class="slides">
+			<section>
+				<p style="font-size: 150%;"><b>Curso JavaScript Avanzado</b></p>
+				<p style="font-size: 110%;"><b>Paradigmas de Programación</b></p>
+				<div><img src="img/js-logo.png" alt="JavaScript" style="border:0; box-shadow:none; max-width:20%;"></div>
+				<p>
+					de <b><a href="http://ed.team/" target="_blank">EDteam</a></b>
+					por <a href="http://twitter.com/jonmircha" target="_blank">@jonmircha</a>
+				</p>
+				<p>
+					<a href="http://jonmircha.github.io/edjs-paradigmas2017" target="_blank">TEORÍA</a>
+					y
+					<a href="https://github.com/jonmircha/edjs-paradigmas2017" target="_blank">CÓDIGOS</a>
+				</p>
+			</section>
+			<section>
+				<figure>
+					<figcaption>
+						<a href="http://jonmircha.com" target="_blank">Jonathan MirCha</a><br>
+						<b>Instructor Web & Arquitecto de Front end.</b><br>
+						Entusiasta de la educación digital.
+						Dirijo <a href="http://bextlan.com" target="_blank">Bextlán</a>.<br>
+						Maratonista(x10) Fitness. <a href="http://www.celiacos.org/enfermedad-celiaca.html" target="_blank">Celiaco</a> por amor.
+					</figcaption>
+					<img src="http://bextlan.com/img/jonmircha.jpg" style="height: auto; max-width: 400px;"></a>
+				</figure>
+			</section>
+			<section>
+				<h2>Temas:</h2>
+				<ol style="font-size: 90%;">
+					<li><a href="#/">Inicio</a></li>
+					<li><a href="#/3">Paradigmas de Programación</a></li>
+					<li><a href="#/36">JavaScript y su contexto actual</a></li>
+					<li><a href="#/83">Programación Orientada a Objetos</a></li>
+					<li><a href="#/111">Programación Asíncrona</a></li>
+					<li><a href="#/133">Programación Funcional</a></li>
+					<li><a href="#/">Programación Reactiva</a></li>
+					<li><a href="#/">Flujo de Trabajo Isomórfico</a></li>
+					<li><a href="#/">Todo List</a></li>
+				</ol>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Paradigmas de Programación
+				</p>
+				<ul>
+					<li><a href="#/4">Programación</a></li>
+					<li><a href="#/21">Tipos de Programación</a></li>
+					<li><a href="#/26">Imperativa vs Declarativa</a></li>
+					<li><a href="#/31">Síncrona vs Asíncrona</a></li>
+				</ul>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Programación<br>Entendiendo lo qué es
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					La gente cree que programar es <b>dificil</b>
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Algunas razones:
+				</p>
+				<ul>
+					<li><b>MALOS</b> Profesores</li>
+					<li>Programadores <b>SOBERBIOS</b></li>
+					<li><b>HUMANOS</b> que <b>NO</b> les gusta <b>PENSAR</b> y <b>ANALIZAR</b></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					La <b>programación</b> es:
+				</p>
+				<ul>
+					<li>Intuitiva e inherente a los humanos</li><br>
+					<li>Las cosas intuitivas se van a la memoria muscular, <small>donde no se necesita pensar, se ejecuta en automático, como respirar</small></li><br>
+					<li>Desde que te levantas estás programando</li><br>
+					<li>Debería enseñarse desde los estudios primarios <small>como las Matemáticas, las Ciencias Naturales, el Civismo, los Idiomas, etc</small></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Definición:
+				</p>
+				<div class="flex">
+					<div class="c2">
+						<img src="./img/def-programar.png">
+					</div>
+					<div class="c2">
+						<img src="./img/def-programacion.png">
+					</div>
+				</div>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>PROGRAMAR</b> es el <b>FLUJO</b> de ALGO que se PROCESA, se TRANSFORMA y TERMINA de OTRO MODO
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Recomendaciones:
+				</p>
+				<ul>
+					<li>Debemos <b>PENSAR</b> como <b>HUMANOS</b> y <b>NO</b> como <b>MÁQUINAS</b></li>
+					<li>Debemos entender el <b>FLUJO</b> de lo que se quiere hacer, para <b>EJECUTAR</b> los <b>PROCESOS</b> que controlarán dicho <b>FLUJO</b></li>
+					<li><b>NUNCA</b> traten de ejecutar <b>PROCESOS</b>, sin antes tener un <b>FLUJO</b> que controlar</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>PROGRAMAR ES<br>FLUJO Y NO PROCESOS</b>
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>PROGRAMAR ES COMO COCINAR... UNA RECETA</b>
+				</p>
+				<img src="./img/programmer-chef.jpg">
+			</section>
+			<section>
+				<ul>
+					<li><b>Algoritmo:</b> Serie de pasos ordenados y finitos para realizar o resolver una tarea o problema</li><br>
+					<li><b>Diagrama de Flujo:</b> Es es la representación gráfica de un algoritmo</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Figuras de los Diagramas de Flujo
+				</p>
+				<img src="./img/simbolos-diagramas-flujo.png">
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					¿Cómo determino si un número dado, es par o impar?
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Algoritmo:
+				</p>
+				<br>
+				<ol>
+					<li>Ingresar un número</li>
+					<li>Dividir el número en cuestión entre 2</li>
+					<li>Si el residuo de la división es 0, el número es par</li>
+					<li>Si el residuo de la división es 1, el número es impar</li>
+				</ol>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Diagrama de Flujo:
+				</p>
+				<img src="./img/diagrama-par-impar.jpg" style="max-width: 65%;">
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Código en JavaScript Front end (<small>Navegadores</small>)
+				</p>
+				<pre>
+<code class="JavaScript">function parImpar() {
+	let numero = prompt('Ingresa un número'),
+		modulo = numero % 2,
+		par = `El número: ${numero} es Par`,
+		impar = `El número: ${numero} es Impar`
+		
+	return (modulo === 0) ? par : impar
+}
+
+parImpar()</code>
+				</pre>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Código en JavaScript Back end (<small>Node.js</small>)
+				</p>
+				<pre>					
+<code class="JavaScript">function parImpar() {
+	process.stdout.write('Ingresa un número: ')		
+	
+	process.stdin.once('data', numero => {
+		let modulo = numero % 2,
+			par = `El número: ${numero} es Par`,
+			impar = `El número: ${numero} es Impar`,
+			residuo = (modulo === 1) ? impar : par
+		
+		process.stdout.write(residuo)
+		process.exit()
+	})
+}
+parImpar()</code>
+				</pre>
+				<p><a href="#/3">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					¿Qué es un paradigma?
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Definición:
+				</p>
+				<img src="./img/def-paradigma.png">
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					<b>
+						Modelo, Ejemplo, Patrón
+						<br><br>
+						No confundir con Patrones de Diseño
+					</b>
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Tipos de Programación
+				</p>
+				<p style="font-size: 120%;">
+					(<b>Manera de abstraer el flujo de datos</b>)
+				</p>
+				<ul>
+					<li>Programación Procedural <small>(Cobol, PHP, C)</small></li>
+					<li>Programación Orientada a Objetos <small>(JavaScript, Java, Ruby)</small></li>
+					<li>Programación Funcional <small>(JavaScript, Haskell, Erlang)</small></li>
+					<li>Programación Reactiva <small>(JavaScript, Erlang, Java)</small></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Formas de Programación
+				</p>
+				<ul>
+					<li>
+						<b>Cómo se escribe</b>
+						<ul>
+							<li>Programación imperativa <small>(JavaScript, PHP, C)</small></li>
+							<li>Programación declarativa <small>(JavaScript, Haskell, Erlang)</small></li>
+						</ul>
+					</li>
+					<li>
+						<b>Cómo se ejecuta</b>
+						<ul>
+							<li>Programación Síncrona <small>(JavaScript, PHP, Cobol)</small></li>
+							<li>Programación Asíncrona <small>(JavaScript, Java, Erlang)</small></li>
+						</ul>
+					</li>
+				</ul>
+				<p><a href="#/3">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Programación
+					<br>
+					Imperativa vs Declarativa
+				</p>
+				<img src="./img/imperativo-vs-declarativo.jpg">
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Imperativa vs Declarativa
+				</p>
+				<div class="flex">
+					<div class="c2">
+						<ul>
+							<li>Indico el <b>¿Cómo?</b></li>
+							<small>
+								<br>
+								<li>Describe un problema en terminos de instrucciones y condiciones para llegar a un resultado</li>
+								<br>
+								<li>Modifica el estado de un programa al permitir la mutación de valores</li>
+							</small>
+						</ul>
+					</div>
+					<div class="c2">
+						<ul>
+							<li>Indico el <b>¿Qué?</b></li>
+							<small>							
+								<br>
+								<li>Describe un problema en terminos de proposiciones y afirmaciones, sin especificar los pasos para resolverlo</li>
+								<br>
+								<li>Evita cambiar el estado de un programa al prevenir la mutación de valores</li>
+							</small>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Imperativa vs Declarativa
+				</p>
+				<div class="flex">
+					<div class="c2">
+						<ul>
+							<li>Indico el <b>¿Cómo?</b></li>
+							<small>
+								<br>
+								<li>Usa procedimientos y rutinas como mecanismo de control, que puede generar efectos secundarios</li>
+								<br>
+								<li>Existen estructuras cíclicas de programación para iterar como <code>while</code>, <code>for</code> y <code>loop</code></li>
+							</small>
+						</ul>
+					</div>
+					<div class="c2">
+						<ul>
+							<li>Indico el <b>¿Qué?</b></li>
+							<small>
+								<br>							
+								<li>Usa funciones puramente matemáticas que carecen de efectos secundarios</li>
+								<br>
+								<li>No existen estructuras cíclicas, la forma de iterar es a través de la recursión o de funciones de alto nivel como <code>map</code>, <code>reduce</code> y <code>filter</code></li>
+							</small>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Imperativa vs Declarativa
+				</p>
+				<div class="flex">
+					<div class="c2">
+						<ul>
+							<li>Indico el <b>¿Cómo?</b></li>
+							<small>
+								<br>
+								<li>Asignación destructiva de variables, una variable puede ser re-asignada tantas veces como se requiera</li>
+								<br>
+								<li>No hay garantía que las variables pasen con transparencia de un método a otro</li>
+								<br>
+								<li>Código verboso y con muchas líneas de código</li>
+							</small>
+						</ul>
+					</div>
+					<div class="c2">
+						<ul>
+							<li>Indico el <b>¿Qué?</b></li>
+							<small>
+								<br>							
+								<li>No hay asignación destructiva de variables, por lo general una variable no puede ser asignada más de una vez</li>
+								<br>
+								<li>Las variables son pasadas transparentemente de una función a otra</li>
+								<br>
+								<li>Código más expresivo y relativamente más corto</li>
+							</small>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+				<p><a href="#/3">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Programación
+					<br>
+					Síncrona vs Asíncrona
+				</p>
+				<img src="./img/thrillerdance.gif">
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Síncrona vs Asíncrona
+				</p>
+				<div class="flex">
+					<div class="c2">
+						<ul>
+							<small>
+								<li>Programación Paralela</li>
+								<br>
+								<li>Acciones Bloqueantes</li>
+								<br>
+								<li><b>Paralelismo:</b> varios objetos realizando una acción cada uno simultáneamente (síncrono)</li>
+							</small>
+						</ul>
+					</div>
+					<div class="c2">
+						<ul>
+							<small>
+								<li>Programación Concurrente</li>
+								<br>
+								<li>Acciones NO Bloqueantes</li>
+								<br>							
+								<li><b>Concurrencia:</b> un solo objeto, con varias tareas “activas” entre las que va alternando(asíncrono)</li>
+							</small>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Síncrona vs Asíncrona
+				</p>
+				<p style="font-size: 120%;">
+					Comensales vs Meseros
+				</p>
+				<img src="./img/comensales.jpg" style="width: 65%;">
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Síncrona vs Asíncrona
+				</p>
+				<p style="font-size: 120%;">
+					Abriendo un Archivo
+				</p>
+				<div class="flex">
+					<div class="c2">
+						<p>Bloqueante</p>
+					</div>
+					<div class="c2">
+						<p>No Bloqueante</p>
+					</div>
+				</div>
+				<div class="flex">
+					<div class="c2">
+						<ul>
+							<small>
+								<li>Abrir el archivo</li>
+								<li>Leer el archivo</li>
+								<li>Imprimir contenido</li>
+								<li>Hacer algo más</li>
+							</small>
+						</ul>
+					</div>
+					<div class="c2">
+						<ul>
+							<small>
+								<li>Abrir el archivo</li>
+								<li>Leer el archivo</li>
+								<li>
+									Cuando termines,
+									<ul>
+										<li>Imprimir contenido</li>
+									</ul>
+								</li>
+								<li>Hacer algo más</li>
+							</small>
+						</ul>
+					</div>
+				</div>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+				<p><a href="#/3">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					JavaScript y su contexto actual
+				</p>
+				<ul>
+					<li><a href="#/37">Eras JavaScript</a></li>
+					<li><a href="#/51">El Estándar EcmaScript</a></li>
+					<li><a href="#/55">Grámatica JavaScript</a></li>
+					<li><a href="#/67">Las buenas partes de JavaScript (<small>viejas y nuevas</small>)</a></li>
+					<li><a href="#/77">Tipos de datos en JavaScript</a></li>
+				</ul>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<blockquote>
+					<p style="font-size: 120%;">	
+						"Es el único lenguaje en el que me doy cuenta que las personas sienten que no necesitan aprenderlo antes de empezar a utilizarlo."
+					</p>
+					<cite><a href="http://www.crockford.com/" target="_blank">Douglas Crockford</a></cite>
+				</blockquote>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>¿Por qué?</b>
+				</p>
+			</section>
+			<section>
+				<img src="./img/spectrum-frontend.png">
+				<a href="https://www.frontendhandbook.com/" target="_blank">Fuente</a>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Definición
+				</p>
+				<img src="./img/def-javascript.png">
+			</section>
+			<section>
+				<blockquote>
+					<p style="font-size: 75%;">	
+						"JavaScript, conocido como LiveScript, JScript, ECMAScript, es uno de los lenguajes de programación más populares del mundo. Virtualmente cada computadora en el mundo tiene al menos un intérprete JavaScript instalado y sin duda es usado frecuentemente (navegador web). La popularidad que tiene JavaScript se debe enteramente a su rol como lenguaje de script en la Web. A pesar de su popularidad, pocos saben que JavaScript es un lenguaje de programación dinámico, orientado a objetos y de propósito general."
+					</p>
+					<small>
+						<cite><a href="http://www.crockford.com/javascript/javascript.html" target="_blank">CROCKFORD, Douglas. Javascript: The World’s Most Misunderstood Programming Language, 2001</a></cite>
+					</small>
+				</blockquote>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>Eras JavaScript</b>
+				</p>
+				<ul>
+					<li>Los Inicios (1995)</li>
+					<li>Era Flash (2000)</li>
+					<li>Era HTML5 (2008)</li>
+					<li>Era Componentes Web y <br> Notificaciones en Tiempo Real (2014)</li>
+					<p>Considera lo siguiente:</p>
+					<li><a href="https://www.tiobe.com/tiobe-index/" target="_blank">Top 50 Lenguajes de Programación</a></li>
+					<li><a href="https://www.tiobe.com/tiobe-index/javascript/" target="_blank">Evolución de JavaScript</a></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>Los Inicios (1995)</b>
+				</p>
+				<ul style="font-size: 75%;">
+					<li>Fue creado en 1995 por Brendan Eich de Netscape en 13 días</li>
+					<li>Es un lenguaje interpretado (no necesita compilar para ejecutarse)</li>
+					<li>Se define orientado a objetos basado en prototipos, orientado a eventos, NO tipado y dinámico.</li>
+					<li>En JavaScript <b>TODO</b> es un objeto</li>
+					<li>Las funciones son objetos de primer órden</li>
+					<li>Se utilizaba en sitios web para agregar funcionalidad e interactividad al HTML, validar formularios, comunicarse con el servidor, etc</li>
+					<li>Fue implementado en 1996 en el Nestcape Navigator 2.0 y posteriormente en todos los navegadores</li>
+					<li>Es el lenguaje de programación front end de la web</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>JavaScript NO es Java</b>
+				</p>
+				<img src="./img/this-is-javascript.jpg">
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>JavaScript NO es Java</b>
+				</p>
+				<img src="./img/jsvsjava.jpg">
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>JavaScript NO es Java</b>
+				</p>
+				<img src="./img/java-vs-javascript.jpg">
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>Era Flash (2000)</b>
+				</p>
+				<ul style="font-size: 75%;">
+					<li>Guerra de los Navegadores</li>
+					<li>Ante la incompatibilidad de los estándares proliferan sitios y aplicaciones web en Flash</li>
+					<li>Se crea <b>AJAX</b> (<small>Asynchronous JavaScript And XML</small>), mecanismo que permite la comunicación asíncrona entre el navegador y el servidor</li>
+					<li>Se crea <b>JSON</b> (<small>JavaScript Object Notation</small>), formato ligero de intercambio de datos que ha reemplazado a <b>XML</b></li>
+					<li>Proliferan librerías y frameworks para hacer <b>CrossBrowser</b> como <b>jQuery</b></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					<b>Era HTML5 (2008)</b>
+				</p>
+				<img src="./img/pleca-html5.png" class="sin-fondo">
+				<br>
+				<ul style="font-size: 75%;">
+					<li>De 2008 a 2014 se define e implementa <a href="https://www.w3.org/html/logo/" target="_blank">HTML5</a></li>
+					<li>HTML5 apesta a JavaScript (<small>6 de sus 8 implementaciones tienen JS</small>)</li>
+					<li>Proliferan librerías y frameworks para todo propósito</li>
+					<li>En 2009 se crea <a href="https://nodejs.org/" target="_blank">Node.js</a> el entorno de programación <b>Back end</b> de JS</li>
+					<li>Surgen Bases de Datos <b>NoSQL</b> de tipo Documental basadas en <b>JSON</b></li>
+					<li>Se desarrollan <b>API's</b> para la interacción con el software y hardware del dispositivo del usuario a través del navegador</li>
+					<li>JavaScript comienza a tener una gran <a href="https://www.npmjs.com/" target="_blank">comunidad</a></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					<b>Era Componentes Web y Notificaciones en Tiempo Real (2014)</b>
+				</p>
+				<br>
+				<p>
+					Hoy JavaScript, es el único lenguaje capaz de ejecutarse en las 3 capas de una aplicación:
+				</p>
+				<p>( <b>ISOMORFISMO</b> )</p>
+				<ul>
+					<li>Front end (<small>JavaScript</small>)</li>
+					<li>Back end (<small>Node.js</small>)</li>
+					<li>Persistencia de Datos (<small>Varias opciones</small>)</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					<b>Era Componentes Web y Notificaciones en Tiempo Real (2014)</b>
+				</p>
+				<p style="font-size: 75%;">
+					JavaScript hoy nos permite crear:
+				</p>
+				<div class="flex">
+					<div class="c2">
+						<ul style="font-size: 65%;">
+							<li>Sitios Web Front end</li>
+							<li>
+								Aplicaciones:
+								<ul>
+									<li>SPA (<small>Single Page Application</small>)</li>
+									<li>basadas en Componentes Web</li>
+									<li>basadas en Microservicios</li>
+									<li>de Red Distribuidas y Escalables</li>
+									<li>en Tiempo Real</li>
+									<li>Isomórficas, Híbridas y Nativas</li>
+								</ul>
+							</li>
+							<li>Hacer <a href="https://www.chromeexperiments.com/webgl" target="_blank">3D</a> y <a href="https://aframe.io/" target="_blank">VR</a></li>
+						</ul>
+					</div>
+					<div class="c2">
+						<ul style="font-size: 65%;">
+							<li>Servidores Web</li>
+							<li>Bases de Datos <a href="http://nosql-database.org/" target="_blank">NoSQL</a></li>
+							<li>Controlar <a href="http://johnny-five.io/" target="_blank">Hardware</a><br>(<small>Drones, Wearables, Electrodomésticos, Robots</small>)</li>
+							<li>
+								Scripts CLI para:
+								<ul>
+									<li>Administrar el S.O.</li>
+									<li>Automatizar tareas de desarrollo</li>
+									<li>Hacer pruebas de código</li>
+									<li>Para la dominación mundial 🌎 😈</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<p><a href="#/36">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>Definición</b></p>
+				<img src="./img/def-ecmascript.png">
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>El Estándar EcmaScript</b></p>
+				<ul>
+					<li>ECMAScript es el nombre del estándar internacional que define JavaScript</li>
+					<li>Definido por un comité técnico (TC-39) de ecma international.</li>
+					<li>Identificado como Ecma-262 y ISO/IEC 16262</li>
+					<li>No es parte del W3C</li>
+					<li>La versión actual es la ES6 o ECMAScript 2015</li>
+				</ul>
+			</section>
+			<section>
+				<small>
+					<table>
+						<thead>
+						<tr>
+						<th>Edición</th>
+						<th>Publicación</th>
+						<th>Cambios</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+						<td>1</td>
+						<td>1997</td>
+						<td><small>Primera edición</small></td>
+						</tr>
+						<tr>
+						<td>2</td>
+						<td>1998</td>
+						<td><small>Cambios editorales para mentener la especificación completa alineada con el estándar internacional ISO/IEC 16262</small></td>
+						</tr>
+						<tr>
+						<td>3</td>
+						<td>1999</td>
+						<td><small>Se agregaron expresiones regulares, mejor manejo de strings, nuevo control de declaraciones, manejo de excepciones con try/catch, definición más estricta de errores, formato para la salida numérica y otras mejoras</small></td>
+						</tr>
+						<tr>
+						<td>4</td>
+						<td>Abandonado</td>
+						<td><small>La cuarta edición fue abandonada debido a diferencias políticas respecto a la complejidad del lenguaje. Muchas características propuestas para la cuarta edición fueron completamente abandonadas; algunas fueron propuestas para la edición ECMAScript Harmony</small></td>
+						</tr>
+						<tr>
+						<td>5</td>
+						<td>2009</td>
+						<td><small>Agrega el modo estricto <strong><code>strict mode</code></strong>, un subconjunto destinado a proporcionar una mejor comprobación de errores y evitar constructores propensos a errores. Aclara varias ambigüedades de la tercera edición, y afina el comportamiento de las implementaciones del “mundo real” que difieren consistentemente desde esa especificación. Agrega algunas nuevas características, como getters y setters, librería para el soporte de JSON, y una más completa reflexión sobre las propiedades de los objetos</small></td>
+						</tr>
+						<tr>
+						<td>5.1</td>
+						<td>2011</td>
+						<td><small>Está completamente alineada con la tercera edición del estándar internacional ISO/IEC 16262:2011</small></td>
+						</tr>
+						<tr>
+						<td>6</td>
+						<td>2015</td>
+						<td><small>La sexta edición agrega cambios significativos en la sintaxis para escribir aplicaciones complejas, incluyendo clases y módulos, definiéndolos sémanticamente en los mismos términos del modo estricto de la edición ECMAScript 5. Otras nuevas características incluyen iteradores for/of loops, generadores y generador de expresiones estilo Python, funciones de dirección, datos binarios, colecciones (mapas, sets, mapas débiles), y proxies (metaprogramación para objetos virtuales y wrappers). Al ser la primera especificación “ECMAScript Harmony”, es también conocida como “ES6 Harmony”</small></td>
+						</tr>
+						<tr>
+						<td>7</td>
+						<td>En progreso</td>
+						<td><small>La séptima edición está orientada a continuar con la reforma del lenguaje, aislamiento de códigos, control de efectos y librerías/herramientas habilitadas desde ES6. Nuevas características propuestas incluyen promesas/concurrencia, matemáticas y datos numéricos mejorados, guards y trademarks (una alternativa al tipado estático), sobrecarga de operadores, value types (first-class number-like objects), nuevas estructuras de registro (registros, tuplas y vectores tipados), pattern matching, y traits</small></td>
+						</tr>
+						</tbody>
+					</table>
+				</small>
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>Recursos EcmaScript</b></p>
+				<ul>
+					<li><a href="http://www.ecma-international.org/ecma-262/6.0/" target="_blank">ECMAScript® 2015 Language Specification</a></li>
+					<li><a href="https://github.com/addyosmani/es6-tools" target="_blank">ECMAScript 6 Tools</a></li>
+					<li><a href="http://es6-features.org/" target="_blank">ECMAScript 6 Features</a></li>
+					<li><a href="https://kangax.github.io/compat-table/es6/" target="_blank">ECMAScript 6 Compatibility Table</a></li>
+					<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/New_in_JavaScript/ECMAScript_6_support_in_Mozilla" target="_blank">ECMAScript 6 support in Mozilla</a></li>
+					<li><a href="https://github.com/airbnb/javascript#ecmascript-6-styles" target="_blank">Airbnb ECMAScript 6 Styles</a></li>
+				</ul>
+				<p><a href="#/36">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Gramática JavaScript</b></p>
+				<img src="./img/def-gramatica.png">
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					La gramática se define como el estudio de las reglas y principios que estandarizan el uso del lenguaje dentro de la oración
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Si llevamos este término a la programación podríamos entender el concepto de la gramática como las reglas y principios que regulan la escritura del código
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					No sólo es el hecho de escribir código como se nos dé la gana, debemos escribir código que sea entendible y ordenado
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					No importa cuantas personas haya detrás del código, debe leérse como si una sóla persona lo haya escrito
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Nomenclatura del código
+				</p>
+				<ul>
+					<li>
+						En archivos usa <b><code>snake_case</code></b>
+						<br>
+						<mark><code>js_style_guide.js</code></mark>
+					</li>
+					<br>
+					<li>
+						En objetos, primitivos, funciones e instancias usa <b><code>camelCase</code></b>
+						<br>
+						<mark><code>const myObj = {}</code></mark><br>
+						<mark><code>const myNum = 1</code></mark><br>
+						<mark><code>const myMap = new Map()</code></mark><br>
+						<mark><code>function myFn() {}</code></mark>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;">
+					Nomenclatura del código
+				</p>
+				<ul>
+					<li>
+						En clases y constructores usa <b><code>PascalCase</code></b>
+						<br>
+						<mark><code>class MyClass {}</code></mark><br>
+						<mark><code>function MyClass() {}</code></mark><br>
+					</li>
+					<br>
+					<li>
+						En constantes usa <b><code>UPPER_CASE</code></b>
+						<br>
+						<mark><code>const MY_CONSTANT = 1</code></mark><br>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Palabras reservadas
+				</p>
+				<pre style="font-size: 50%;">					
+<code class="JavaScript">A: abstract
+B: boolean, break, byte
+C: case, catch, char, class, const, continue
+D: debugger, default, delete, do, double
+E: else, enum, export, extends
+F: false, final, finally, float, for, function
+G: goto
+I: if, implements, import, in, instanceof, int, interface
+L: long
+N: native, new, null
+P: package, private, protected, public
+R: return
+S: short, static, super, switch, synchronized
+T: this, throw, throws, transient, true, try, typeof
+V: var, volatile, void
+W: while, with</code>
+				</pre>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Ordenamiento de Código
+				</p>
+				<ol>
+					<li>Importaciones de otros archivos o librerias</li>
+					<li>Definición de constantes</li>
+					<li>Definición de variables y objetos</li>
+					<li>Definición de funciones</li>
+					<li>Asignación de eventos y estados iniciales</li>
+				</ol>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Guías de Estilo
+				</p>
+				<ul>
+					<li><a href="https://standardjs.com/readme-esla.html" target="_blank">JavaScript Standard Style </a></li>
+					<li><a href="https://github.com/airbnb/javascript#airbnb-javascript-style-guide-" target="_blank">Airbnb JavaScript Style Guide</a></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Usa Vanilla JS (<small>JavaScript Puro</small>)
+				</p>
+				<ul>
+					<li><a href="https://plainjs.com/" target="_blank">Plain JS</a></li>
+					<li><a href="http://youmightnotneedjquery.com/" target="_blank">Tal vez no necesitas usar jQuery</a></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Aprende JavaScript
+				</p>
+				<p>Guías de primera mano</p>
+				<ul>
+					<li><a href="http://jstherightway.org/es-es/" target="_blank">JavaScript The Right Way</a></li>
+					<li><a href="http://bonsaiden.github.io/JavaScript-Garden/es/" target="_blank">El Jardín de JavaScript</a></li>
+					<li><a href="https://learnxinyminutes.com/docs/es-es/javascript-es/" target="_blank">Aprende X en Y minutos, Donde X = JavaScript</a></li>
+				</ul>
+				<p>Aprende en serio</p>
+				<ul>
+					<li><a href="http://eloquentjavascript.net/" target="_blank">Eloquent JavaScript</a></li>
+					<li><a href="https://www.ebooks-it.net/ebook/javascript-the-good-parts" target="_blank">JavaScript The Good Parts</a></li>
+				</ul>
+				<p><a href="#/36">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Las buenas partes de JavaScript</b></p>
+				<p style="font-size: 120%;"><b>(las viejas y las nuevas)</b></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Orientado a Objetos</b></p>
+				<p>
+					Los objetos son una colección de propiedades.					
+				</p>
+				<p>
+					4 Formas de crear objetos en JS:
+				</p>
+				<ol>
+					<li>Objetos literales</li>
+					<li>Prototipos</li>
+					<li>Funciones Constructoras</li>
+					<li>Clases</li>
+				</ol>
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>Funciones como Objetos de Primera Clase</b></p>
+				<p style="font-size: 120%;"><b>(Functions as First-Class Objects)</b></p>
+				<p>
+					Las funciones en JavaScript son objetos de primera clase. Esto significa que las funciones son simplemente un tipo de objeto especial, con las cuales se pueden hacer las mismas cosas que cualquier otro objeto podria hacer
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Tipado Blando</b></p>
+				<p style="font-size: 120%;"><b>(Loose Typing)</b></p>
+				<p>
+					No es necesario especificar el tipo de dato de una variable al ser declarada, cuando se le asigna un valor, JavaScript detecta el tipo de dato automáticamente
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Alcance</b></p>
+				<p style="font-size: 120%;"><b>(Scoping)</b></p>
+				<p>
+					Con ES5 teniamos alcance global y funcional
+				</p>
+				<p>
+					Después de ES6 tenemos alcance global, funcional y de bloque
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">Elevación<b></b></p>
+				<p style="font-size: 120%;"><b>(Hoisting)</b></p>
+				<p style="font-size: 80%;">
+					En ejecución, todas las declaraciones <b><code>var</code></b> y <b><code>function</code></b> son movidas al comienzo de cada función
+				</p>
+				<p style="font-size: 80%;">
+					Es buena práctica declarar todas las variables juntas en la primera línea, con el fín de evitar falsas expectativas
+				</p>
+				<p style="font-size: 80%;">
+					Desde ES6 con <b><code>let</code></b> podemos tener variables de bloque y evitar la elevación, por ello ya no deberías usar <b><code>var</code></b>
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Modo Estrícto</b></p>
+				<p style="font-size: 120%;"><b>(Strict Mode)</b></p>
+				<p>
+					El modo estricto en ES5 es una manera de optar por una forma restringida de JavaScript. El código en modo estricto y en modo no estrícto pueden coexistir
+				</p>
+				<p>
+					Desde ES6 ya no es necesario
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones Anónimas</b></p>
+				<p style="font-size: 120%;"><b>(Anonymous Functions)</b></p>
+				<p>
+					Son declaradas dinámicamente en tiempo de ejecución. Son llamadas anónimas porque no poseen un nombre de la misma manera que las funciones normales
+				</p>
+				<p>
+					Desde ES6 tenemos las funciones flechas<br><b><code>() => { ... }</code></b>
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones de Clausura</b></p>
+				<p style="font-size: 120%;"><b>(Closure Functions)</b></p>
+				<p>
+					Son un patrón de diseño muy utilizado en JavaScript que nos permite mantener privacidad en atributos y métodos. Encapsulan variables y funciones que únicamente serán accesibles si son devueltas con el operador <b><code>return</code></b>
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones Auto Invocadas</b></p>
+				<p style="font-size: 120%;"><b>(Immediately-Invoked Functions)</b></p>
+				<p>
+					Es un patrón de diseño que produce un scope léxico. Usadas para evitar hoisting, protege el código del ambiente global y simultáneamente permite acceder a los métodos publicos al tiempo que conserva la privacidad en las variables definidas dentro
+				</p>
+				<p><a href="#/36">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Tipos de Datos en JavaScript</b></p>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					JavaScript es un lenguaje <b>débilmente tipado</b>. Lo que significa que no se requiere indicar el tipo de dato de cada variable declarada
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Todas las variables admiten todos los tipos, y pueden ser reescritas. Es una de las cosas buenas y malas que tiene JavaScript
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>¿Qué es una variable?</b></p>
+				<p style="font-size: 120%;">Definición</p>
+				<img src="./img/def-variable.png">
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					Las variables son espacios de memoria donde almacenamos temporalmente datos desde los que podemos acceder en cualquier momento de la ejecución de nuestros programas. Tienen varios tipos y clases.
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Tipos de Datos	</b></p>
+				<ol>
+					<li>
+						Primitivos (<small>se accede directamente al valor</small>)
+						<ul>
+							<small>
+								<li>string</li>
+								<li>number</li>
+								<li>boolean</li>
+								<li>null</li>
+								<li>undefined</li>
+							</small>
+						</ul>
+					</li>
+					<li>
+						Complejos (<small>se accede a la referencia del valor</small>)
+						<ul>
+							<small>
+								<li>object = {}</li>
+								<li>array = []</li>
+								<li>function () { }</li>
+							</small>
+						</ul>
+					</li>
+				</ol>
+				<p><a href="#/36">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<h1>Muchas Gracias</h1>
+				<h2>¡Hasta la próxima!</h2>
+				<img src="./img/fox.svg" style="border: 0; background-color: transparent; box-shadow: none;">
+				<p>
+					<a href="http://twitter.com/jonmircha" target="_blank">@jonmircha</a>
+					/ 
+					<a href="mailto:jonmircha@gmail.com" target="_blank">jonmircha@gmail.com</a>
+					/ 
+					<a href="http://jonmircha.com" target="_blank">jonmircha.com</a>
+				</p>
+				<p><a href="#/">&lt;&lt; inicio</a></p>
+			</section>
+		</div>
+	</div>
+	<script src="lib/js/head.min.js"></script>
+	<script src="js/reveal.js"></script>
+	<script>
+		// Full list of configuration options available at:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: 'plugin/zoom-js/zoom.js', async: true },
+				{ src: 'plugin/notes/notes.js', async: true }
+			]
+		});
+	</script>
+</body>
+</html>
