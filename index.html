@@ -1023,6 +1023,278 @@ W: while, with</code>
 				<p><a href="#/36">&lt;&lt; regresar al subtemario</a></p>
 			</section>
 			<section>
+				<p style="font-size: 150%;"><b>Programación Orientada a Objetos</b></p>
+				<ul>
+					<li><a href="#/84">Conceptos Básicos</a></li>
+					<li><a href="#/95">Entendiendo <code>this</code> en JavaScript</a></li>
+					<li><a href="#/99">POO Prototípica en JS</a></li>
+					<li><a href="#/104">POO con Clases en JS</a></li>
+				</ul>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Orientada a Objetos</b></p>
+				<p style="font-size: 120%;"><b>Definición</b></p>
+				<img src="./img/def-poo.png">
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					La <b>POO</b> trata de plasmar o representar la realidad del mundo físico (lo concreto) y llevarlo al mundo digital (lo abstracto)
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Platón: primer programador POO</b></p>
+				<img src="./img/platon.jpg">
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>WTF!</b></p>
+				<img src="./img/cereal-guy.jpg" style="max-width: 80%;">
+			</section>
+			<section>
+				<blockquote>
+					<p>Platón decía:</p>
+					<p style="font-size: 120%;">
+						Vivimos en el mundo de las ideas, y los objetos son meras representaciones físicas de esas ideas
+					</p>
+					<cite><a href="https://es.wikipedia.org/wiki/Teor%C3%ADa_de_las_formas" target="_blank">Tratado de la Teoría de las Ideas</a></cite>
+				</blockquote>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					4 Conceptos Básicos de POO
+				</p>
+				<div class="flex">
+					<div class="c2">
+						<img src="./img/kEnAi.jpg">
+					</div>
+					<div class="c2">
+						<ol>
+							<li>Clase</li>
+							<li>Objeto</li>
+							<li>Métodos</li>
+							<li>Atributos</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					4 Conceptos Básicos de POO
+				</p>
+				<div class="flex">
+					<div class="c2">
+						<ol>
+							<li>
+								Clase
+								<br>
+								<small>
+									<ul>
+										<li>Es un <b>Modelo</b> a seguir</li>
+										<li>La idea de Platón</li>
+										<li>Sintaxis: <b><code>Class Perro {...}</code></b></li>
+									</ul>
+								</small>
+							</li>
+						</ol>
+					</div>
+					<div class="c2">
+						<ol start="2">
+							<li>
+								Objeto
+								<br>
+								<small>
+									<ul>
+										<li>Representación o <b>Instancia</b> de una clase</li>
+										<li>La representación física de la idea de Platón</li>
+										<li>Sintaxis: <b><code>kenai = new Perro()</code></b></li>
+									</ul>
+								</small>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<section>
+				<p style="font-size: 120%;">
+					4 Conceptos Básicos de POO
+				</p>
+				<p>Los objetos tienen 2 facultades</p>
+				<div class="flex">
+					<div class="c2">
+						<ol start="3">
+							<li>
+								Métodos
+								<br>
+								<small>
+									<ul>
+										<small>
+											<li>Son las cosas o <b>Acciones</b> que hacen los objetos</li>
+											<li>Sintaxis: <b><code>objeto.metodo()</code></b></li>
+											<li>correr, caminar, mover la cola, ladrar (verbos/acciones)</li>
+											<li><b><code>kenai.comer('croqueta')</code></b></li>
+											<li><b><code>kenai.ladrar()</code></b></li>
+											<br>
+											<li>Los Métodos fuera de los objetos se llaman <b>Funciones</b></li>
+											<li><b><code>function ladrar() { ... }</code></b></li>
+											<li>Los <b>Parámetros</b> son argumentos (datos) que se pueden pasar (o no) a una función. Pueden ser opcionales, y se separan por comas</li>
+											<li><b><code>function comer(comida) { ... }</code></b></li>
+										</small>
+									</ul>
+								</small>
+							</li>
+						</ol>
+					</div>
+					<div class="c2">
+						<ol start="4">
+							<li>
+								Atributos
+								<br>
+								<small>
+									<ul>
+										<small>
+											<li>Son las características o <b>Propiedades</b> que tienen los objetos</li>
+											<li>Sintaxis: <b><code>objeto.atributo = valor</code></b></li>
+											<li>nombre, raza, edad, tamaño</li>
+											<li><b><code>kenai.raza = 'Firefox'</code></b></li>
+											<li><b><code>kenai.edad = 3</code></b></li>
+											<li><b><code>kenai.esterilizado = true</code></b></li>
+											<br>
+											<li>Los Atributos fuera de los objetos se llaman Variables</li>
+											<li><b><code>let nombre = 'kEnAi'</code></b></li>
+										</small>
+									</ul>
+								</small>
+							</li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<section>
+				<p style="font-size: 150%;">Características de la POO</p>
+				<p>
+					La POO debe guardar ciertas características que la identifican y diferencian de otros paradigmas de programación
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;">Características de la POO</p>
+				<ul>
+					<li>Abstracción<small>Aislación de un elemento de su contexto. Define las características esenciales de un objeto</small></li><br>
+					<li>Encapsulamiento<small>Reúne al mismo nivel de abstracción, a todos los elementos pertenecientes a una misma entidad</small></li><br>
+					<li>Modularidad<small>Permite dividir una aplicación en varias partes más pequeñas, independientes unas de otras</small></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;">Características de la POO</p>
+				<ul>
+					<li>Ocultación<small>Los objetos están aislados del exterior, protegiendo a sus propiedades para no ser modificadas por aquellos que no tengan derecho a acceder a las mismas</small></li><br>
+					<li>Polimorfismo<small>Capacidad que da a diferentes objetos, la posibilidad de contar con métodos y atributos de igual nombre, sin que los de un objeto interfieran con los del otro</small></li><br>
+					<li>Herancia<small>Es la relación existente entre dos o más clases, donde una es la principal (madre) y otras son secundarias y dependen (heredan) de ellas (clases hijas), donde a la vez, los objetos heredan las características de los objetos de los cuales dependen</small></li>
+				</ul>
+				<p><a href="#/83">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Entendiendo <code>this</code> en JavaScript</b></p>
+			</section>
+			<section>
+				<p>
+					<b><code>this</code></b> en JavaScript tiene un comportamiento muy diferente a otros lenguajes de programación, incluso para algunos desarrolladores es considerado uno de los grandes errores de diseño del lenguaje
+				</p>
+			</section>
+			<section>
+				<p>
+					La clave para entender el comportamiento de <b><code>this</code></b>, es tener claro donde se invoca, para saber qué objeto le asigna.
+				</p>
+				<ul>
+					<li>Asignación implícita</li>
+					<li>Asignación explícita</li>
+					<li>Asignación con <code>new</code></li>
+					<li>Asignación global</li>
+					<li>Las Arrow Functions</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+				<p><a href="#/83">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">POO Prototípica en JS</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">POO Prototípica en JS</p>
+				<p style="font-size: 120%;"><b>Definición</b></p>
+				<img src="./img/def-prototipo.png">
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>Programación basada ​​en Prototipos</b></p>
+				<p>
+					Es un estilo de POO en la que las clases no están presentes y la reutilización de comportamiento (<small>herencia</small>) se lleva a cabo a través de un proceso de decoración de objetos existentes que sirven de prototipos
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>Programación basada ​​en Prototipos</b></p>
+				<ul>
+					<li>Anidación de Objetos</li>
+					<li>POO con Closures</li>
+					<li>POO con Funciones Constructoras</li>
+					<li><a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#factorypatternjavascript" target="_blank">Factory Pattern</a></li>
+					<li>POO con Prototype</li>
+					<li>Herencia Prototípica</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+				<p><a href="#/83">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">POO con Clases en JS</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">POO con Clases en JS</p>
+				<p style="font-size: 120%;"><b>Definición</b></p>
+				<img src="./img/def-clases.png">
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>Programación basada ​​en Clases</b></p>
+				<p>
+					Con la llegada ES6 la definición de una función constructora ha cambiado y nos ofrece la posibilidad de crear clases
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;">Azúcar Sintáctico</p>
+				<p style="font-size: 120%;"><b>Definición</b></p>
+				<img src="./img/def-azucar-sintactico.png">
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>Programación basada ​​en Clases</b></p>
+				<p>
+					ES6 aporta un '<b>azúcar sintáctico</b>' para declarar una clase como en la mayoría de los lenguajes POO, pero por debajo sigue siendo una función prototipal				
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>Programación basada ​​en Clases</b></p>
+				<ul>
+					<li>Clases y Constructores</li>
+					<li>Herencia y Polimorfismo</li>
+					<li>Setters y Getters</li>
+					<li>
+						Modificadores de Acceso:
+							<ul>
+								<small>
+									<li>Publico</li>
+									<li>Estático</li>
+									<li>Privacidad con <a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/WeakMap" target="_blank">WeakMap</a></li>
+								</small>
+							</ul>
+					</li>
+					<li>Super Constructores y Super Llamanadas</li>
+					<li>Mixins</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+				<p><a href="#/83">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
 				<h1>Muchas Gracias</h1>
 				<h2>¡Hasta la próxima!</h2>
 				<img src="./img/fox.svg" style="border: 0; background-color: transparent; box-shadow: none;">
