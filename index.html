@@ -69,8 +69,8 @@
 					<li><a href="#/83">Programación Orientada a Objetos</a></li>
 					<li><a href="#/111">Programación Asíncrona</a></li>
 					<li><a href="#/133">Programación Funcional</a></li>
-					<li><a href="#/">Programación Reactiva</a></li>
-					<li><a href="#/">Flujo de Trabajo Isomórfico</a></li>
+					<li><a href="#/170">Programación Reactiva</a></li>
+					<li><a href="#/189">Flujo de Trabajo Isomórfico</a></li>
 					<li><a href="#/">Todo List</a></li>
 				</ol>
 			</section>
@@ -657,7 +657,7 @@ parImpar()</code>
 									<li>Administrar el S.O.</li>
 									<li>Automatizar tareas de desarrollo</li>
 									<li>Hacer pruebas de código</li>
-									<li>Para la dominación mundial 🌎 😈</li>
+									<li>Para la dominación mundial</li>
 								</ul>
 							</li>
 						</ul>
@@ -1295,6 +1295,826 @@ W: while, with</code>
 				<p><a href="#/83">&lt;&lt; regresar al subtemario</a></p>
 			</section>
 			<section>
+				<p style="font-size: 150%;"><b>Programación Asíncrona</b></p>
+				<ul>
+					<li><a href="#/112">¿Qué es y qué no es?</a></li>
+					<li><a href="#/115">Control de flujo asíncrono</a></li>
+					<li><a href="#/117">AJAX y JSON</a></li>
+				</ul>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>¿Qué es Programación Asíncrona?</b></p>
+				<p>
+					Establece la capacidad que tienen las operaciones del flujo de un programa para devolver el control de la ejecución al mismo (<small>programa</small>) antes de que hayan terminado sus procesos, mientras siguen operando en segundo plano (<small>procesos u operaciones no bloqueantes</small>)
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>¿Qué es Programación Asíncrona?</b></p>
+				<p>
+					Esto agiliza el proceso de ejecución y permite aumentar la escalabilidad, pero complica el razonamiento sobre el programa
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 140%;"><b>¿Qué NO es Programación Asíncrona?</b></p>
+				<img src="./img/def-asincrono.png" style="max-width: 90%;">
+				<p><a href="#/111">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Control de flujo asíncrono</b></p>
+				<ul>
+					<li><a href="http://callbackhell.com/" target="_blank">Callbacks</a></li>
+					<li><a href="https://www.promisejs.org/" target="_blank">Promesas</a></li>
+					<li><a href="https://www.promisejs.org/generators/" target="_blank">Generadores</a></li>
+					<li><a href="https://tc39.github.io/ecmascript-asyncawait/" target="_blank">Funciones Asíncronas</a> (<small><code>async y await</code></small>)</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+				<p><a href="#/111">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>AJAX (<small>Asynchronous JavaScript And XML</small>)</b></p>
+				<p style="font-size: 150%;"><b>y</b></p>
+				<p style="font-size: 150%;"><b>JSON (<small>JavaScript Object Notation</small>)</b></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>AJAX</b></p>
+				<p>Es un API JavaScript para realizar peticiones asíncronas al servidor utilizando XML o JSON</p>
+				<br>
+				<p>Ajax no es una tecnología en sí mismo. En realidad, se trata de varias tecnologías independientes que se unen</p>
+			</section>
+			<section>
+				<p style="font-size: 120%;">Las tecnologías que forman AJAX son:</p>
+				<ul style="font-size: 80%;">
+					<li><b>HTML</b> y <b>CSS</b>, para crear una presentación basada en estándares</li>
+					<li><b>DOM</b>, para la interacción y manipulación dinámica de la presentación</li>
+					<li><b>XML</b> o <b>JSON</b>, para el intercambio y la manipulación de información</li>
+					<li><b>XMLHttpRequest</b> o <b>Fetch</b>, para el intercambio asíncrono de información</li>
+					<li><b>JavaScript</b>, para unir todas las demás tecnologías</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 120%;">Tecnologías que forman AJAX</p>
+				<img src="./img/ajax-tecnologias.gif">
+			</section>
+			<section>
+				<p style="font-size: 120%;">Modelo Clásico de la Web VS Modelo AJAX</p>
+				<img src="./img/ajax-modelo.gif">
+			</section>
+			<section>
+				<p style="font-size: 120%;">Flujo Síncrono VS Flujo Asíncrono</p>
+				<img src="./img/ajax-flujo.gif" style="max-width: 45%;">
+			</section>
+			<section>
+				<p style="font-size: 120%;">Estados de la Petición AJAX</p>
+				<table>
+					<tr>
+						<td>0</td>
+						<td>UNSET (<small>No se ha llamado al método open</small>)</td>
+					</tr>
+					<tr>
+						<td>1</td>
+						<td>OPENED (<small>Se ha llamado al método open</small>)</td>
+					</tr>
+					<tr>
+						<td>2</td>
+						<td>HEADERS_RECEIVED (<small>Se ha llamado al método send</small>)</td>
+					</tr>
+					<tr>
+						<td>3</td>
+						<td>LOADING (<small>Se está recibiendo la respuesta</small>)</td>
+					</tr>
+					<tr>
+						<td>4</td>
+						<td>DONE (<small>Se ha completado la operación</small>)</td>
+					</tr>
+				</table>
+				<p>Considera tambien los <a href="http://es.wikipedia.org/wiki/Anexo:C%C3%B3digos_de_estado_HTTP" target="_blank">códigos de estado HTTP</a></p>
+			</section>
+			<section>
+				<p style="font-size: 120%;"><b>Más info de AJAX</b></p>
+				<ul>
+					<li><a href="http://librosweb.es/libro/ajax/capitulo_7.html" target="_blank">AJAX conceptos básicos</a></li>
+					<li><a href="https://developer.mozilla.org/es/docs/AJAX" target="_blank">AJAX en MDN</a></li>
+					<li><a href="http://blog.garstasio.com/you-dont-need-jquery/ajax/" target="_blank">AJAX sin jQuery</a></li>
+					<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API" target="_blank">Fetch API en MDN</a></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>JSON</b></p>
+				<p>Es un formato ligero de intercambio de datos. Leerlo y escribirlo es simple para humanos, y facil de interpretar y generar para las máquinas</p>
+				<br>
+				<p>Está basado en un subconjunto del Lenguaje de Programación JavaScript, Standard ECMA-262 3rd Edition - Diciembre 1999, creado por Douglas Crockford</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>JSON</b></p>
+				<p>
+					Es independiente del lenguaje pero utiliza convenciones que son ampliamente conocidos por los programadores de la familia de lenguajes C, Java, JavaScript, Perl, Python, y muchos otros		
+				</p>
+				<br>
+				<p>Estas propiedades hacen que JSON sea un lenguaje ideal para el intercambio de datos</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>JSON</b></p>
+				<p style="font-size: 80%;">Está constituído por dos estructuras:</p>
+				<ol style="font-size: 80%;">
+					<li>Una colección de pares de nombre/valor. En varios lenguajes esto es conocido como un objeto, registro, estructura, diccionario, tabla hash, lista de claves o un arreglo asociativo</li>
+					<li>Una lista ordenada de valores. En la mayoría de los lenguajes, esto se implementa como arreglos, vectores, listas o sequencias</li>
+				</ol>
+				<p style="font-size: 80%;">Estas son estructuras universales en todos los lenguajes de programación</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>JSON</b></p>
+				<p style="font-size: 120%;"><b>Características:</b></p>
+				<ul>
+					<li>Es una sintaxis para almacenar e intercambiar datos</li>
+					<li>Es una alternativa más fácil de usar a XML</li>
+					<li>En aplicaciones AJAX, JSON es más rápido y más fácil que XML</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>JSON</b></p>
+				<p style="font-size: 120%;"><b>Sintaxis:</b></p>
+				<ul style="font-size: 80%;">
+					<li>Su sintaxis deriva de la notación de objetos JavaScript</li>
+					<li>Los datos se encuentran en pares de nombre / valor</li>
+					<li>Los datos están separados por comas</li>
+					<li>Las llaves { } contienen objetos</li>
+					<li>Los corchetes [ ] tienen arreglos</li>
+					<li>Los datos tienen un nombre y un valor</li>
+					<li>Los datos se escribe como pares de nombre / valor<br><code>"nombre": "valor"</code></li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>JSON</b></p>
+				<p style="font-size: 120%;"><b>Valores:</b></p>
+				<ul style="font-size: 80%;">
+					<li>Un número (<small>entero o de coma flotante</small>)</li>
+					<li>Una cadena (<small>entre comillas dobles</small>)</li>
+					<li>Un booleano (<small>verdadero o falso</small>)</li>
+					<li>Un arreglo (<small>entre corchetes</small>)</li>
+					<li>Un objeto (<small>entre llaves</small>)</li>
+					<li>Un valor nulo (<small>null</small>)</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>JSON</b></p>
+				<ul style="font-size: 90%;">
+					<li>
+						Más info
+						<ul>
+							<li><a href="http://www.json.org/json-es.html" target="_blank">JSON.org</a></li>
+							<li><a href="http://www.w3schools.com/js/js_json_intro.asp" target="_blank">JSON en w3schools.com</a></li>
+						</ul>
+					</li>
+					<li>
+						Métodos
+						<ul>
+							<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/JSON/stringify" target="_blank"><code>JSON.stringify()</code></a><br><small>Convierte un valor a cadena de notación JSON</small></li>
+							<li><a href="https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/JSON/parse" target="_blank"><code>JSON.parse()</code></a><br><small>analiza una cadena de texto como JSON</small></li>
+						</ul>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+				<p><a href="#/111">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Funcional</b></p>
+				<ul>
+    			<li><a href="#/134">¿Qué es?</a></li>
+					<li><a href="#/140">Programación Declarativa</a></li>
+					<li><a href="#/145">Funciones Puras</a></li>
+					<li><a href="#/153">Transparencia Referencial</a></li>
+					<li><a href="#/155">Inmutabilidad</a></li>
+					<li><a href="#/159">Recursividad</a></li>
+					<li><a href="#/164">Métodos Funcionales</a></li>
+					<li><a href="#/166">Funciones y Objetos</a></li>
+				</ul>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Funcional</b></p>
+				<br>
+				<p>
+					Es un viejo conocido del mundo del desarrollo, pero en los últimos años está cogiendo tracción gracias a la emergencia de arquitecturas reactivas, el uso de esquemas funcionales en Big Data y el creciente soporte en diversas plataformas de desarrollo
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Funcional</b></p>
+				<br>
+				<p>
+					JavaScript ha sido siempre un lenguaje con fuerte tendencia al diseño funcional y desde el surgimiento de Node.js y la filosofía de los paquetes NPM, este paradigma es uno de los más importantes en el lenguaje
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Funcional</b></p>
+				<p style="font-size: 120%;"><b>Usa funciones para:</b></p>
+				<ul>
+					<li>Abstraer el control de flujo y las operaciones de una aplicación</li>
+					<li>Evitar efectos secundarios por estados globales y mutables</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Funcional</b></p>
+				<p style="font-size: 120%;"><b>Ayuda a:</b></p>
+				<ul>
+					<li>Escribir código más expresivo</li>
+					<li>Crear aplicaciones más limpias, modulares y testeables</li>
+					<li>Cometer menos errores</li>
+					<li>Protegernos del propio JavaScript</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Funcional</b></p>
+				<p style="font-size: 120%;"><b>Beneficios:</b></p>
+				<ul>
+					<li>Alienta a la descomposición de tareas complejas</li>
+					<li>Permite procesar datos con un flujo encadenado</li>
+					<li>Disminuye la complejidad del código dirigido por eventos</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Funcional</b></p>
+				<p style="font-size: 120%;"><b>Se basa en:</b></p>
+				<ul>
+					<li>Programación Declarativa</li>
+					<li>Funciones Puras</li>
+					<li>Transparencia Referencial</li>
+					<li>Inmutabilidad</li>
+				</ul>
+				<p><a href="#/133">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Declarativa</b></p>
+				<p>
+					La PF se encuentra dentro del conjunto de los lenguajes declarativos
+				</p>
+				<p>
+					La programación declarativa se basa en indicar el <b>qué</b> debe hacerse a diferencia de la programación imperativa donde se indica el <b>cómo</b>
+				</p>
+				<p>Veamos un ejemplo...</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Declarativa</b></p>
+				<p style="font-size: 120%;">
+					Código Imperativo para obtener el cuadrado
+				</p>
+				<pre>					
+<code class="JavaScript">const numbers = [1, 2, 3, 4, 5]
+function squared (numbers) {
+	let arr = []
+	for ( let i = 0; i < numbers.length; i++ ) {
+		arr.push( numbers[i] * numbers[i] )
+	}
+
+	return console.log(arr)
+}
+
+squared(numbers)</code>
+				</pre>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Declarativa</b></p>
+				<p style="font-size: 120%;">
+					Código Declarativo para obtener el cuadrado
+				</p>
+				<pre>					
+<code class="JavaScript">const numbers = [1, 2, 3, 4, 5]
+console.log( numbers.map( num => num * num ) )</code>
+				</pre>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Declarativa</b></p>
+				<p>
+					Se centra en el uso de expresiones para describir la lógica de un programa sin tener que especificar el flujo o los cambios de estados que se producen, eso se delega en una función
+				</p>
+				<br>
+				<p>
+					De esta forma obtenemos un código de primer nivel encargado de ir expresando <b>qué</b> necesita hacer
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Declarativa</b></p>
+				<p style="font-size: 80%;">
+					Un ejemplo de programación declarativa es <b>SQL</b>.
+				</p>
+				<p style="font-size: 80%;">
+					SQL es un lenguaje encargado de describir sentencias que indican que colecciones quiero crear, obtener, actualizar o eliminar de una base de datos
+				</p>
+				<p style="font-size: 80%;">
+					En ninguno momento sabemos cual es el mecanismo por el cual los datos son obtenidos 
+				</p>
+				<p style="font-size: 80%;">
+					Conseguimos abstraernos por medio de <b>cajas negras</b>, es decir, <b>funciones puras</b>
+				</p>
+				<p><a href="#/133">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones Puras</b></p>
+				<br>
+				<p>
+					La PF se basa en la premisa de poder construir programas inmutables por medio de pequeños bloques lógicos, las funciones
+				</p>
+				<br>
+				<p>
+					Y se debe intentar desarrollar funciones lo más <b>puras</b> posibles
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones Puras</b></p>
+				<p>
+					Una función pura se caracteriza por:
+				</p>
+				<br>
+				<ul style="font-size: 85%;">
+					<li>
+						Depender sólo de los parámetros de entrada proporcionados y no de ningún estado externo a la función que podría cambiar durante la evaluación o entre llamadas
+					</li>
+					<br>
+					<li>
+						No inflige cambios más allá de su ámbito. Por lo tanto, no tiene que modificar estados globales, ni estados que han pasado por referencia
+					</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones Puras</b></p>
+				<pre>					
+<code class="JavaScript">let likes = 0
+function addLike () {
+  return ++likes
+}</code>
+				</pre>
+				<p style="font-size: 120%;">Función impura</p>
+				<p style="font-size: 85%;">
+					Está modificando estados que no se encuentran en su ámbito y hace uso de una variable externa
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones Puras</b></p>
+				<br>
+				<p>
+					Con JavaScript tenemos que tener mucho cuidado con este tipo de aspecto pues es muy frecuente usar variables de ámbitos padre de una función, por lo que hay que corregir este comportamiento para que consigamos funciones puras
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones Puras</b></p>
+				<pre>					
+<code class="JavaScript">function addLike (likes) {
+  return ++likes
+}
+addLike( addLike(0) )</code>
+				</pre>
+				<p style="font-size: 120%;">Función pura</p>
+				<p style="font-size: 85%;">
+					La función ahora no puede sufrir efectos secundarios porque tiene su estado bajo control, no depende de ningún estado externo
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones Puras</b></p>
+				<br>
+				<p>
+					Nos ayudan a cometer menos errores y a verificar en todo momento como es el estado antes y después de ejecutar una función
+				</p>
+				<br>
+				<p>
+					Evitar este tipo de uso, hará que nuestro código sea más robusto y fácil de testear
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones Puras</b></p>
+				<p><b>Casos que podrían causar efectos secundarios:</b></p>
+				<br>
+				<ul style="font-size: 90%;">
+					<li>Cambiar una variable u objeto global</li>
+					<li>Cambiar un valor original del argumento de una función</li>
+					<li>Procesar datos de entrada del usuario</li>
+					<li>Lanzar excepciones</li>
+					<li>Mostrar datos por pantalla</li>
+					<li>Consultar el DOM, las cookies o una base de datos</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones Puras</b></p>
+				<br>
+				<p>
+					Muchos de estos efectos secundarios no se pueden evitar al acceder a aplicaciones reales. Sin embargo, la PF nos ayudará a delimitar y detectar estos casos para que produzcan el menor daño posible
+				</p>
+				<br>
+				<p><a href="#/133">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Transparencia Referencial</b></p>
+				<br>
+				<p>
+					Otra de las características de las funciones puras
+				</p>
+				<br>
+				<p>
+					Una función es <b>referencialmente transparente</b> si de manera consistente devuelve los mismos resultados con los mismos datos de entrada
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Transparencia Referencial</b></p>
+				<br>
+				<p>
+					Si la función depende de estados externos, es complicado que dado unos valores de entrada, siempre devuelva los mismos resultados de salida	ya que en el camino, todas esas dependencias pueden cambiar el comportamiento de la función
+				</p>
+				<br>
+				<p><a href="#/133">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Inmutabilidad</b></p>
+				<p style="font-size: 80%;">
+					El mayor número de errores en una aplicación se producen por un mal control de los estados
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Que un estado pueda cambiar puede hacer que no obtengamos lo esperado
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Por lo tanto controlar los cambios de estados en las aplicaciones es primordial
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Inmutabilidad</b></p>
+				<p  style="font-size: 80%;">
+					Una aplicación perfecta sería aquella en la cual no existieran estados y si hubiesen fueran mínimos y controlados lo mejor posibles
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Lamentablemente en las aplicaciones reales existen datos que cambian el estado
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Lo único que podemos hacer es reducir el número de estados a los indispensables e intentar que sean <b>inmutables</b>
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Inmutabilidad</b></p>
+				<br>
+				<p  style="font-size: 80%;">
+					En JavaScript los tipos simples como String, Number o Boolean son tipos inmutables. Cuando se modifica un estado se genera una nueva referencia del dato en memoria
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Sin embargo, los Array y los Objetos son mutables. La referencia a su memoria siempre es la misma, si modificamos un atributo o un elemento el puntero continua
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Inmutabilidad</b></p>
+				<br>
+				<p style="font-size: 80%;">
+					Esto puede provocar efectos secundarios ya que si a una función que creemos pura, le pasamos un objeto o array como parámetro, puede que internamente estemos modificando valores internos y que el estado de nuestra aplicación cambie, provocando que se rompa la transparencia referencial
+				</p>
+				<br>
+				<p><a href="#/133">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Recursividad</b></p>
+				<br>
+				<p  style="font-size: 80%;">
+					Es una técnica en programación para solucionar problema complejos que pueden dividirse en partes más pequeñas e idénticas al problema total pero de menor magnitud
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					La composición de todas las soluciones hijas dan el resultado de la solución padre
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Recursividad</b></p>
+				<br>
+				<p style="font-size: 80%;">
+					Suele funcionar autoejecutando funciones con un ámbito menos al problema padre. Es por eso que en toda solución recursiva contamos con 2 elementos:
+				</p>
+				<br>
+				<ol>
+					<li><b>Un caso base</b></li>
+					<li><b>Un caso recursivo</b></li>
+				</ol>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Recursividad</b></p>
+				<p style="font-size: 120%;"><b>Caso Base</b></p>
+				<br>
+				<p style="font-size: 80%;">
+ 					Es el caso al que toda función recursiva tiene que acabar llegando para dar por resuelto el caso más simple del problema que se quiere resolver
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Si no definimos un caso base dentro de nuestra solución recursiva llamaremos a nuestra función infinitas veces hasta que acabemos con todos los recursos del sistema
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Recursividad</b></p>
+				<p style="font-size: 120%;"><b>Caso Recursivo</b></p>
+				<br>
+				<p style="font-size: 80%;">
+ 					Suele ser una función que es capaz de autoinvocarse
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+ 					La clave de esta autoinvocación es que los elementos que le pasemos tendrán que ser menores que los del problema padre ya que si no nunca podríamos llegar al caso base
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Recursividad</b></p>
+				<p>
+					Es una técnica muy usada en programación funcional porque nos evita el uso de iteraciones
+				</p>
+				<br>
+				<p>
+					Se lleva muy bien con estructuras de datos que partan de un nodo raíz y del que vayan colgando diferentes nodos hijos como los Arreglos y los Objetos
+				</p>
+				<p><a href="#/133">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Métodos Funcionales</b></p>
+				<img src="./img/map-filter-reduce-in-emoji.png">
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Métodos Funcionales</b></p>
+				<ul style="font-size: 80%;">
+					<li>Cumplen con todas las características funcionales</li>
+					<li>Son de orden superior</li>
+					<li>Se pueden encadenar</li>
+					<li>Necesitan una expresion <a href="https://es.wikipedia.org/wiki/C%C3%A1lculo_lambda" target="_blank"><b>lambda</b></a> para funcionar</li>
+					<li>
+						Permiten:
+						<ul>
+							<li>Abstraer el control de flujo de la lógica de negocio</li>
+							<li>Evitar el uso de bucles e iteraciones</li>
+							<li>Tienen ámbito de bloque</li>
+						</ul>
+					</li>
+				</ul>
+				<p><a href="#/133">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Funciones y Objetos</b></p>
+				<img src="./img/pf-vs-poo.png">
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Conclusión</b></p>
+				<p>
+					La <b>Programación Funcional</b> es un paradigma que usa <b>sintaxis declarativa</b> de <b>funciones puras</b> para crear programas <b>inmutables</b> que eviten efectos secundarios que sean observados externamente, puede convivir con otros paradigmas como la <b>Orientación a Objetos</b>
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Cosas en el Tintero</b></p>
+				<p>
+					Transductores, Aridad, Tuplas, Currificación, Funtores, Combinadores, Memorización, Mónadas
+				</p>
+				<p style="font-size: 150%;"><b>Aprende más</b></p>
+				<ul>
+					<li><a href="https://www.manning.com/books/functional-programming-in-javascript" target="_blank">PF en JavaScript</a></li>
+					<li><a href="https://www.haskell.org/" target="_blank">Haskell</a></li>
+					<li><a href="https://www.erlang.org/" target="_blank">Erlang</a></li>
+				</ul>
+				<p><a href="#/133">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Reactiva</b></p>
+				<br>
+				<p>
+					Es un paradigma de programación orientado a flujos de datos y la propagación de cambios
+				</p>
+				<br>
+				<p><a href="http://www.reactivemanifesto.org/es" target="_blank">The Reactive Manifesto</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Programación Reactiva</b></p>
+				<br>
+				<p style="font-size: 80%;">
+					Es un modelo de programación que pretende dar respuesta a la demanda creciente de nuevos sistemas más flexibles, elásticos y tolerantes a fallos a partir de los principios propios de la programación funcional
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Ésto resulta muy ventajosa porque produce desarrollos más declarativos y explícitos centrados en las transformaciones que deben sufrir los datos para su procesamiento
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>La Web como modelo Reactivo</b></p>
+				<br>
+				<p style="font-size: 80%;">
+					La Web, como plataforma de interacción, es un sistema reactivo
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					El DOM representa en memoria el documento de la página que visualiza el navegador y es un modelo de datos sujeto a cambios sobre el que pueden registrarse funciones escuchadoras para cada uno de los eventos que lanza el navegador
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>La Web como modelo Reactivo</b></p>
+				<p style="font-size: 80%;">
+					La programación basada en escuchadores es el más básico de los modelos de la Web y es Reactivo
+				</p>
+				<img src="./img/pr-evento.png" style="max-width: 65%;">
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>El patrón Observador</b></p>
+				<br>
+				<p style="font-size: 80%;">
+					El paradigma de escuchadores de eventos en JavaScript es la manifestación del patrón de diseño <a href="https://addyosmani.com/resources/essentialjsdesignpatterns/book/#observerpatternjavascript" target="_blank">Observador o Pub/Sub</a>
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Es un patrón de diseño en el que los objetos se suscriben a un evento y reciben notificaciones cuando éste se produce
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>El patrón Observador</b></p>
+				<img src="./img/javascript-observer.png">
+				<br>
+				<p style="font-size: 80%;">
+					Este patrón es la piedra angular de la programación orientada a eventos, incluyendo JavaScript
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Facilita el buen diseño funcional y orientado a objetos
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>El patrón Observador</b></p>
+				<p style="font-size: 80%;">
+					Los objetos que participan en este modelo son:
+				</p>
+				<ul style="font-size: 80%;">
+					<li>
+							<b>Subject (<small>sujeto</small>)</b>
+							<ul>
+								<li>
+									Mantiene la lista de observadores. Cualquier número de objetos observador puede observar un Subject
+								</li>
+								<li>
+									Implementa una interfaz que permite a los objetos de observación suscribirse o enviar una notificación a sus observadores cuando su estado cambia
+								</li>
+							</ul>
+					</li>
+					<li>
+						<b>Observers (<small>observadores</small>)</b>
+						<ul>
+							<li>
+								Se asocian al Subject y pueden ser invocados cuando se producen eventos (cambios)
+							</li>
+						</ul>
+
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Arquitecturas Web Reactivas</b></p>
+				<br>
+				<p style="font-size: 80%;">
+					Son sistemas que operan en reacción a los eventos ocurridos sobre el modelo de datos del <b>DOM</b>
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Cada evento atraviesa una cadena de transformación funcional para su procesamiento
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Arquitecturas Web Reactivas</b></p>
+				<br>
+				<p style="font-size: 80%;">
+					Como evolución del modelo de construcción basado en programación de escuchadores, emergieron una serie de arquitecturas que se recogen bajo el acrónimo <b>MV*</b> por sus similitudes entre sí
+				</p>
+				<br>
+				<p style="font-size: 80%;">
+					Todas ellas comparten la premisa de que están centradas en un modelo interno cuyos cambios son atendidos por la vista a través de cierta lógica de control					
+				</p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Arquitecturas Web Reactivas</b></p>
+				<img src="./img/pr-mv1.png">
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Arquitecturas Web Reactivas</b></p>
+				<img src="./img/pr-mv2.png">
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Arquitecturas Web Reactivas</b></p>
+				<img src="./img/pr-mv3.png">
+			</section>
+			<section>
+				<p style="font-size: 150%;">Librerías y Frameworks Reactivos</p>
+				<img src="./img/js-frameworks.png">
+			</section>
+			<section>
+				<p style="font-size: 150%;">Librerías y Frameworks Reactivos</p>
+				<p style="font-size: 120%;">los populares</p>
+				<img src="./img/js-frameworks-populares.jpg">
+			</section>
+			<section>
+				<p style="font-size: 150%;">Librerías y Frameworks Reactivos</p>
+				<ul style="font-size: 80%;">
+					<li>
+						<a href="https://angular.io/" target="_blank">Angular</a>
+						<blockquote style="font-size: 60%;">
+							<p>
+								One framework. Mobile &amp; Desktop. Angular is a development platform for building mobile and desktop web applications.
+							</p>
+						</blockquote>
+					</li>
+					<li>
+						<a href="https://facebook.github.io/react/" target="_blank">React</a>
+						<blockquote style="font-size: 60%;">
+							<p>
+								A JavaScript library for building user interfaces.
+							</p>
+						</blockquote>
+					</li>
+					<li>
+						<a href="https://vuejs.org/" target="_blank">Vue.js</a>
+						<blockquote style="font-size: 60%;">
+							<p>
+								The Progressive JavaScript Framework. Intuitive, Fast and Composable MVVM for building interactive interfaces.
+							</p>
+						</blockquote>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<p style="font-size: 150%;">Librerías y Frameworks Reactivos</p>
+				<p style="font-size: 120%;">(no tan populares)</p>
+				<img src="./img/js-frameworks-no-populares.jpg">
+			</section>
+			<section>
+				<p style="font-size: 150%;">Librerías y Frameworks Reactivos</p>
+				<ul style="font-size: 80%;">
+					<li>
+						<a href="http://www.ractivejs.org/" target="_blank">Ractive.js</a>
+						<blockquote style="font-size: 60%;">
+							<p>
+								Ractive.js is a template-driven UI library, but unlike other tools that generate inert HTML, it transforms your templates into blueprints for apps that are interactive by default.
+							</p>
+						</blockquote>
+					</li>
+					<li>
+						<a href="http://reactivex.io/" target="_blank">ReactiveX</a>
+						<blockquote style="font-size: 60%;">
+							<p>
+								The Observer pattern done right. ReactiveX is a combination of the best ideas from the Observer pattern, the Iterator pattern, and functional programming.
+							</p>
+						</blockquote>
+					</li>
+					<li>
+						<a href="http://reactivex.io/rxjs/" target="_blank">RxJS</a>
+						<blockquote style="font-size: 60%;">
+							<p>
+								RxJS is a library for reactive programming using Observables, to make it easier to compose asynchronous or callback-based code.
+							</p>
+						</blockquote>
+					</li>
+				</ul>
+			</section>
+			<section>
+				<h1>Let's to Code! \<div class="carita">XD</div>/</h1>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Flujo de Trabajo Isomórfico</b></p>
+				<ul>
+					<li><a href="#/"></a></li>
+					<li><a href="#/"></a></li>
+					<li><a href="#/"></a></li>
+					<li><a href="#/"></a></li>
+				</ul>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Flujo de Trabajo Isomórfico</b></p>
+				<p><a href="#/">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Todo List</b></p>
+				<ul>
+					<li><a href="#/"></a></li>
+					<li><a href="#/"></a></li>
+					<li><a href="#/"></a></li>
+					<li><a href="#/"></a></li>
+				</ul>
+				<p><a href="#/2">&lt;&lt; regresar al temario</a></p>
+			</section>
+			<section>
+				<p style="font-size: 150%;"><b>Todo List</b></p>
+				<p><a href="#/">&lt;&lt; regresar al subtemario</a></p>
+			</section>
+
+	
+			<section>
+				<h1>Let's to Code & <a href="https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md#deployment" target="_blank">Deploy</a>! \<div class="carita">XD</div>/</h1>
+			</section>
+			<section>
 				<h1>Muchas Gracias</h1>
 				<h2>¡Hasta la próxima!</h2>
 				<img src="./img/fox.svg" style="border: 0; background-color: transparent; box-shadow: none;">
@@ -1306,6 +2126,7 @@ W: while, with</code>
 					<a href="http://jonmircha.com" target="_blank">jonmircha.com</a>
 				</p>
 				<p><a href="#/">&lt;&lt; inicio</a></p>
+				 🌎 😈
 			</section>
 		</div>
 	</div>
