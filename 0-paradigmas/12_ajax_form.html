@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>AJAX Asynchronous JavaScript & XML</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+    html { font-family: sans-serif; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <h1>Curso JavaScript Avanzado: Paradigmas de Programación</h1>
+  <h2>Envío de Formulario con AJAX</h2>
+  <form>
+    <legend>Envíanos tus comentarios</legend>
+    <input type="text" name="nombre" title="Tu nombre" placeholder="Escribe tu nombre" pattern="[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+" autofocus required><br>
+    <input type="email" name="email" title="Tu email" placeholder="Escribe tu email" pattern="[\w-\.]+@([\w-]+\.)+[\w-]{2,4}" required><br>
+    <input type="text" name="asunto" title="Asunto a tratar" placeholder="Asunto a tratar" required><br>
+    <textarea name="comentarios" title="Tus comentarios" placeholder="Escribe tus comentarios" cols="50" rows="5" required></textarea><br>
+    <div class="preload  hidden"><i class="fa  fa-refresh  fa-spin  fa-5x"></i></div>
+    <div class="message  hidden"></div>
+    <input type="submit" value="enviar">
+  </form>
+  <script src="./12_ajax_form.js"></script>
+</body>
+</html>
