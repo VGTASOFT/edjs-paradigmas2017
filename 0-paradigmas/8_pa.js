@@ -110,4 +110,87 @@
 
 ((c) => {
   c('**********Generators**********')
+  const cuadrado = value => {
+    setTimeout(() => {
+      c( { value: value, result: value * value } )
+    }, 0 | value * 100)
+
+    return {
+      value: value,
+      result: value * value
+    }
+  }
+
+  function* generador() {
+    c('Inicio Generator')
+    yield cuadrado(0)
+    yield cuadrado(1)
+    yield cuadrado(2)
+    yield cuadrado(3)
+    yield cuadrado(4)
+    yield cuadrado(5)
+    yield cuadrado(6)
+    yield cuadrado(7)
+    yield cuadrado(8)
+    yield cuadrado(9)
+    yield cuadrado(10)
+    c('Fin Generator')
+  }
+
+  let gen = generador()
+  c( gen.next() )
+  c( gen.next().value )
+  c( gen.next().value )
+  c( gen.next().value )
+  c( gen.next().value )
+  c( gen.next().value )
+  c( gen.next().value )
+  c( gen.next().value )
+  c( gen.next().value )
+  c( gen.next().value )
+  c( gen.next().value )
+  c( gen.next().value )
+  c( gen.next() )
+})(console.log);
+
+((c) => {
+  c('**********Async - Await Functions**********')
+  const cuadrado = value => {
+    return new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve({ value: value, result: value * value })
+      }, 0 | Math.random() * 100)
+    })
+  }
+
+  async function asyncAwait () {
+    c('Inicio Async Funtions')
+    
+    let obj = await cuadrado(0)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    obj = await cuadrado(1)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    obj = await cuadrado(2)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    obj = await cuadrado(3)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    obj = await cuadrado(4)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    obj = await cuadrado(5)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    obj = await cuadrado(6)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    obj = await cuadrado(7)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    obj = await cuadrado(8)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    obj = await cuadrado(9)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    obj = await cuadrado(10)
+    c(`Async Function: ${obj.value}, ${obj.result}`)
+    
+    c('Fin Async Functions')
+  }
+
+  asyncAwait()
 })(console.log);

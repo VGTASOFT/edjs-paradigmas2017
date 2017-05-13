@@ -17,7 +17,7 @@
   <form>
     <legend>Envíanos tus comentarios</legend>
     <input type="text" name="nombre" title="Tu nombre" placeholder="Escribe tu nombre" pattern="[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+" autofocus required><br>
-    <input type="email" name="email" title="Tu email" placeholder="Escribe tu email" pattern="[\w-\.]+@([\w-]+\.)+[\w-]{2,4}" required><br>
+    <input type="email" name="email" title="Tu email" placeholder="Escribe tu email" pattern="[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*" required><br>
     <input type="text" name="asunto" title="Asunto a tratar" placeholder="Asunto a tratar" required><br>
     <textarea name="comentarios" title="Tus comentarios" placeholder="Escribe tus comentarios" cols="50" rows="5" required></textarea><br>
     <div class="preload  hidden"><i class="fa  fa-refresh  fa-spin  fa-5x"></i></div>
